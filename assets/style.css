@@ -1,0 +1,50 @@
+:root {
+    --font-principal: 'Poppins', sans-serif;
+    --font-encabezados: 'Playfair Display', serif;
+}
+
+body {
+    font-family: var(--font-principal);
+    font-weight: 400;
+    line-height: 1.6;
+    color: #333333;
+}
+
+h1, h2, h3, h4, h5, h6, .logo {
+    font-family: var(--font-encabezados);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+a, button, input, select, textarea {
+    font-family: var(--font-principal);
+}
+
+body {
+    background-color: #f4efea;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e2c8bc;
+    border-radius: 10px;
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+}
+
+li {
+    padding-right: 10px;
+}
+
+a {
+    color: #2e2b5f;
+}
+
+.oculto {
+    display: none;
+}
