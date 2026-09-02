@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Iniciar Sesión</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
+        <link rel="stylesheet" href="assets/style.css">
+    </head>
+
+    <body>
+         <header class="hero">
+            <nav class="navbar navbar-expand-md navbar-dark">
+                <div class="container-fluid justify-content-center">
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" 
+                            aria-controls="navMenu" aria-expanded="false" aria-label="Abrir menú">
+                        <div class="navbar-brand">Menú</div>
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navMenu">
+                        <ul class="navbar-nav text-center">
+                            <li class="nav-item">
+                                <span class="nav-link pag-actual">Inicio</span>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Cátalogo</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Nosotros</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Blog</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Carrito de compras</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="login.html">Iniciar sesión</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <section class="hero-content">
+                <h1>Vestuario Jacinta</h1>
+                <p class="tagline">Tu clóset ideal para cada momento</p>
+            </section>
+        </header>
+    
+        <main>
+            
+            <div class="container">
+
+                <article class="row">
+                    <section class="col-12 col-md-6 videos-intro">
+                        <h2>Vuelta de stock</h2>
+                        <video controls aria-label="Video muestra de vuelta de stock en ropa">
+                            <source src="assets/video/back-stock.mp4" type="video/mp4">
+                            Tu navegador no soporta la reproducción de este video.
+                        </video>
+                    </section>
+                    
+                    <section class="col-12 col-md-6 videos-intro">
+                        <h2>Nueva colección</h2>
+                        <video controls aria-label="Video muestra de nueva colección de ropa">
+                            <source src="assets/video/new-collection.mp4" type="video/mp4">
+                            Tu navegador no soporta la reproducción de este video.
+                        </video>
+                    </section>
+                </article>
+            </div>
+        </main>
+
+        <footer>
+            <div class="container">
+                <div class="row text-center text-sm-center">
+                    <div id="footer-tienda" class="col-12 col-sm-6 mb-4">
+                        <h5>Vestuario Jacinta</h5>
+                        <p>Tu clóset ideal para cada momento, desde 1956.</p>
+                    </div>
+
+                    <div class="col-12 col-sm-6 mb-4">
+                        <h5>Síguenos</h5>
+                        <a href="https://www.instagram.com/jacintatienda/?hl=es" target="_blank" rel="noopener noreferrer" class="footer-icon" aria-label="Instagram">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/somosjacintatienda/?locale=es_LA" target="_blank" rel="noopener noreferrer" class="footer-icon" aria-label="Facebook">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <hr>
+
+                <p class="text-center mb-0">&copy; <span id="anioActual"></span> Vestuario Jacinta. Todos los derechos reservados.</p>
+            </div>
+        </footer>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+        <script src="annio.js"></script>
+    </body>
+</html>
