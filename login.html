@@ -62,19 +62,19 @@
 
                     <div class="grupo-form">
                         <label for="log-email">Correo electrónico</label>
-                        <input type="email" id="log-email" name="email" placeholder="ejemplo@correo.com" autocomplete="email" required>
+                        <input type="email" id="log-email" name="email" placeholder="ejemplo@correo.com" autocomplete="email" maxlength="100" required>
                         <span class="error-msg" id="error-log-email"></span>
                     </div>
 
                     <div class="grupo-form">
                         <label for="log-email">Contraseña</label>
-                        <input type="password" id="log-pass" name="password" placeholder="••••" autocomplete="current-password" required>
+                        <input type="password" id="log-pass" name="password" placeholder="••••" autocomplete="current-password" minlength="4" maxlength="10" required>
                         <span class="error-msg" id="error-log-pass"></span>
                     </div>
 
                     <button type="submit" class="submit-btn">Iniciar Sesión</button>
 
-                    <p class="texto-registro">
+                    <p class="texto-login">
                         ¿Todavía no tienes una cuenta?
                         <a href="#" id="link-registro">Registrarme</a>
                     </p>
@@ -85,19 +85,41 @@
 
                     <div>
                         <label for="reg-run">Run</label>
-                        <input type="text" id="reg-run" name="run" placeholder="12345678K" required>
+                        <input type="text" id="reg-run" name="run" placeholder="12345678K" minlength="7" maxlength="9" required>
                         <span class="error-msg" id="error-reg-run"></span>
                     </div>
 
+                    <div>
+                        <label for="reg-nom">Nombre</label>
+                        <input type="text" id="reg-nom" name="nombre" placeholder="Ej: Julio Antonio" maxlength="50" required>
+                        <span class="error-msg" id="error-reg-nom"></span>
+                    </div>
+                    
+                    <div>
+                        <label for="reg-apll">Apellidos</label>
+                        <input type="text" id="reg-apll" name="apellido" placeholder="Ej: Peréz Soto" maxlength="100" required>
+                        <span class="error-msg" id="error-reg-apll"></span>
+                    </div>
+                    
+                    
                     <div>
                         <label for="reg-email">Correo electrónico</label>
                         <input type="email" name="email" id="reg-email" placeholder="ejemplo@correo.com" autocomplete="email" required>
                         <span class="error-msg" id="error-reg-email"></span>
                     </div>
-
+                    
                     <div>
-                        <label for=""></label>
+                        <label for="reg-date">Fecha de Nacimiento (opcional)</label>
+                        <input type="date" id="reg-date" name="date" min="1926-01-01">
+                        <span class="error-msg" id="error-reg-date"></span>
                     </div>
+
+                    <button type="submit" class="submit-btn">Registrarme</button>
+
+                    <p class="texto-registro">
+                        ¿Ya tienes una cuenta?
+                        <a href="#" id="link-login">Iniciar Sesión</a>
+                    </p>
                 </article>
             </section>
         </main>
