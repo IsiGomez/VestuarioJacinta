@@ -1,0 +1,95 @@
+.navbar {
+    background-color: #8c9a7b8c;
+    margin-top: -5px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+}
+
+.navbar-toggler {
+    background-color: #d9897d71;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    border-color: #2e2b5f;
+    border-width: 0.05cm;
+}
+
+.pag-actual {
+    color: white !important; 
+    cursor: default;
+}
+
+@media (min-width: 768px) {
+    .navbar {
+        border-radius: 2cm;
+    }
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  padding: 40px 20px;
+  background-color: #e2c8bc;
+  color: #2e2b5f;
+  border-radius: 0 0 20px 20px;
+}
+
+.hero-content {
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 40px;
+}
+
+.tagline {
+  font-style: italic;
+  font-size: large;
+}
+
+
+.videos-intro h2 {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+video {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+footer {
+    background-color: #e2c8bc;
+    color: #2e2b5f;
+    margin-top: 20px;
+    padding: 40px 20px 20px;
+}
+
+#footer-tienda {
+    background-color: rgba(0, 0, 0, 0.05);
+    align-content: center;
+}
+
+footer h5 {
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+footer ul li {
+    margin-bottom: 8px;
+}
+
+footer a {
+    color: #8c9a7b;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: white;
+}
+
+footer .footer-icon {
+    font-size: 1.5rem;
+    margin-right: 15px;
+}
