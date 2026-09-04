@@ -45,6 +45,52 @@ a {
     color: #2e2b5f;
 }
 
-.oculto {
-    display: none;
+.oculto  {
+    display: none !important;
+}
+
+.form {
+    position: fixed;
+    left: 50%;
+    margin-top: 20px;
+    transform: translateX(-50%);
+    background-color: #fafafa;
+    display: block;
+    padding: 20px;
+    border-radius: 10px;
+    width: 420px;
+    max-width: 90vw;
+}
+
+.secc-form{
+    align-items: center;
+    display: block;
+    text-align: center;
+}
+
+.secc-form input {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 8px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.submit-btn {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color:  #d98a7d;
+  color: #fafafa;
+  cursor: pointer;
+  font-size: 15px;
+  margin-top: 16px;
+}
+
+.error-msg{
+    color: red;
 }
