@@ -57,7 +57,7 @@
 
         <main>
             <section class="form">
-                <article id="secc-log" class="secc-form">
+                <form id="secc-log" class="secc-form" novalidate>
                     <h2>Iniciar Sesión</h2>
 
                     <div class="grupo-form">
@@ -67,7 +67,7 @@
                     </div>
 
                     <div class="grupo-form">
-                        <label for="log-email">Contraseña</label>
+                        <label for="log-pass">Contraseña</label>
                         <input type="password" id="log-pass" name="password" placeholder="••••" autocomplete="current-password" minlength="4" maxlength="10" required>
                         <span class="error-msg" id="error-log-pass"></span>
                     </div>
@@ -78,9 +78,9 @@
                         ¿Todavía no tienes una cuenta?
                         <a href="#" id="link-registro">Registrarme</a>
                     </p>
-                </article>
+                </form>
 
-                <article id="secc-reg" class="secc-form oculto">
+                <form id="secc-reg" class="secc-form oculto">
                     <h2>Registrarse</h2>
 
                     <div>
@@ -109,6 +109,18 @@
                     </div>
                     
                     <div>
+                        <label for="reg-pass">Contraseña</label>
+                        <input type="password" name="password" id="reg-pass" placeholder="••••" required>
+                        <span class="error-msg" id="error-reg-pass"></span>
+                    </div>
+                    
+                    <div>
+                        <label for="reg-pass-con">Confirmar contraseña</label>
+                        <input type="password" name="password-confirm" id="reg-pass-con" placeholder="••••" required>
+                        <span class="error-msg" id="error-reg-pass-con"></span>
+                    </div>
+                    
+                    <div>
                         <label for="reg-date">Fecha de Nacimiento (opcional)</label>
                         <input type="date" id="reg-date" name="date" min="1926-01-01">
                         <span class="error-msg" id="error-reg-date"></span>
@@ -120,7 +132,7 @@
                         ¿Ya tienes una cuenta?
                         <a href="#" id="link-login">Iniciar Sesión</a>
                     </p>
-                </article>
+                </form>
             </section>
         </main>
 
