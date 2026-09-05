@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Catálogo</title>
+
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+            <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+            <link rel="stylesheet" href="assets/style.css">
+        </head>
+    <body>
+        <header>
+            <nav>
+                <div class="logo">
+                    <a href="/" aria-label="Página de inicio">
+                        <img src="assets/img/Jacinta.svg" alt="Inicio" width="160" height="100">
+                    </a>
+                </div>
+                <ul>
+                    <li class="nav-item">
+                        <a href="catalogo.html">
+                            Cátalogo
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#">
+                            Nosotros
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#">
+                            Blog
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a id="cont-carrito" href="carrito.html">
+                            Carrito (0)
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="login.html">
+                        Iniciar Sesión
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <h1>Productos</h1>
+            <div class="productos">
+
+                <div class="producto">
+                    <a href="detalle.html" onclick="guardarProductoSeleccionado('Polera blanca', 10000, 'assets/productos/1.webp')">
+                        <img src="assets/productos/1.webp" alt="Polera blanca" width="150">
+                        <h3>Polera blanca</h3>
+                    </a>
+                    <p>$10000</p>
+                    <button onclick="agregarProducto('Polera blanca', 10000, 'assets/productos/1.webp', 1)">Añadir</button>
+                </div>
+                <div class="producto">
+                    <a href="detalle.html" onclick="guardarProductoSeleccionado('Polera verde', 12000, 'assets/productos/2.webp')">
+                        <img src="assets/productos/2.webp" alt="Polera verde" width="150">
+                        <h3>Polera verde</h3>
+                    </a>
+                    <p>$12000</p>
+                    <button onclick="agregarProducto('Polera verde', 12000, 'assets/productos/2.webp', 1)">Añadir</button>
+                </div>
+
+            </div>
+        </main>
+        <footer>
+
+        </footer>
+        <script src="scripts/catalogo.js"></script>
+    </body>
+</html>
