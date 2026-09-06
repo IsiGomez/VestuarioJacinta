@@ -29,5 +29,19 @@ h2 {
     margin: 0 10px;
 }
 
+.historia-img {
+    width: 100%;
+    height: 100%;
+}
+
+.historia {
+    margin-top: 15px;
+}
+
+.historia h2 {
+    padding: 10px;
+    background-color: #b5bead;
+    border-radius: 4px;
+}
 
 
