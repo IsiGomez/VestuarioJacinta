@@ -24,14 +24,6 @@ body {
     background-color: #f4efea;
 }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #e2c8bc;
-    border-radius: 10px;
-}
-
 ul {
     list-style-type: none;
     display: flex;
