@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Inicio</title>
+        <title>Nosotros</title>
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,6 +13,7 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
         <link rel="stylesheet" href="assets/style.css">
+        <link rel="stylesheet" href="assets/style-we.css">
         <link rel="stylesheet" href="assets/style-ind.css">
     </head>
 
@@ -22,7 +23,7 @@
                 <div class="container-fluid">
 
                     <div class="logo">
-                        <a href="#" aria-label="Página de inicio">
+                        <a href="index.html" aria-label="Página de inicio">
                             <img src="assets/img/Jacinta.svg" alt="Inicio" width="160" height="100">
                         </a>
                     </div>
@@ -35,13 +36,13 @@
                     <div class="collapse navbar-collapse text-end" id="navMenu">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <span class="nav-link pag-actual">Inicio</span>
+                                <a class="nav-link" href="index.html">Inicio</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Cátalogo</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="nosotros.html">Nosotros</a>
+                                <span class="nav-link pag-actual">Nosotros</span>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Blog</a>
@@ -58,34 +59,64 @@
             </nav>
 
             <section class="hero-content">
-                <h1>Vestuario Jacinta</h1>
-                <p class="tagline">Tu clóset ideal para cada momento</p>
+                <h1>Nosotros</h1>
+                <p class="tagline">Conoce sobre nosotros</p>
             </section>
         </header>
     
-        <main>
+        <main class="we">
             
             <div class="container">
 
                 <article class="row">
-
-                    <section class="col-12 col-md-6 text-center videos-intro">
-                        <h2>Vuelta de stock</h2>
-                        <video controls aria-label="Video muestra de vuelta de stock en ropa">
-                            <source src="assets/video/back-stock.mp4" type="video/mp4">
-                            Tu navegador no soporta la reproducción de este video.
-                        </video>
-                    </section>
-                    
-                    <section class="col-12 col-md-6 text-center videos-intro">
-                        <h2>Nueva colección</h2>
-                        <video controls aria-label="Video muestra de nueva colección de ropa">
-                            <source src="assets/video/new-collection.mp4" type="video/mp4">
-                            Tu navegador no soporta la reproducción de este video.
-                        </video>
+                    <section class="col-12">
+                        <div class="rounded text-one">
+                            <h2>Nuestra Historia</h2>
+                            <p>
+                                En <strong>Vestuario Jacinta</strong>, nos hemos consolidado como un referente del vestuario casual y urbano en Chile. 
+                                Con 15 años de trayectoria, acompañamos a nuestros clientes en cada etapa de su vida, ofreciendo prendas modernas, cómodas y pensadas para todas las edades y estilos. 
+                                Desde hitos locales como vestir a la selección infantil de básquetbol de nuestra comuna en 2018, hemos mantenido un fuerte compromiso con nuestra gente y la comunidad.
+                            </p>
+                        </div>
                     </section>
                 </article>
+
+                <article class="row g-4">
+                    
+                    <section class="col-12 col-md-6">
+                        <div class="rounded text-two">
+                            <h2>Misión</h2>
+                            <p>
+                                Ofrecer prendas de vestir cómodas, modernas y de buena calidad para todas las edades y estilos, brindando una experiencia de compra cercana y agradable, 
+                                mientras acompañamos a nuestros clientes en cada etapa de su vida.   
+                            </p>
+                        </div>
+                    </section>
+
+                    <section class="col-12 col-md-6">
+                        <div class="rounded text-two">
+                            <h2>Visión</h2>
+                            <p>
+                                Convertirnos en la tienda online de ropa líder en Chile, reconocida por su variedad, calidad y cercanía con la comunidad, apoyando además el emprendimiento textil local.  
+                            </p>
+                        </div>
+                    </section>
+                </article>
+
+                <article class="row">
+                    <section class="col-12">
+                        <div class="rounded text-one">
+                            <h2>Compromiso con la Comunidad y los Emprendedores</h2>
+                            <p>
+                                Nos apasiona apoyar el talento nacional. Cada compra realizada en nuestra tienda impulsa el trabajo de talleres textiles y emprendedores locales, 
+                                promoviendo un comercio más justo y una moda sustentable.
+                            </p>
+                        </div>
+                    </section>
+                </article>
+
             </div>
+            
         </main>
 
         <footer>

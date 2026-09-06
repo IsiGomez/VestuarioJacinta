@@ -1,0 +1,33 @@
+.we {
+  color: rgba(0, 0, 0, 0.6);
+  padding-top: 35px;
+}
+
+.we .row {
+  margin-bottom: 35px;
+}
+
+h2 {
+    text-align: center;
+}
+
+.text-one, .text-two {
+    background-color: #b5bead;
+    padding: 25px;
+}
+
+.text-two {
+    height: 100%;
+}
+
+.text-one h2, .text-two h2 {
+    margin-bottom: 15px;
+}
+
+.text-one p, .text-two p {
+    text-align: justify;
+    margin: 0 10px;
+}
+
+
+
