@@ -19,7 +19,7 @@
 
     <body>
         <header class="hero">
-            <nav class="navbar navbar-expand-md navbar-dark">
+            <nav class="navbar navbar-expand-lg navbar-dark">
                 <div class="container-fluid">
 
                     <div class="logo">
@@ -39,7 +39,7 @@
                                 <a class="nav-link" href="index.html">Inicio</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Cátalogo</a>
+                                <a class="nav-link" href="#">Catálogo</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="nosotros.html">Nosotros</a>
@@ -63,25 +63,32 @@
 
             <section class="hero-content">
                 <h1>Contacto</h1>
-                <p class="tagline">Envianos tus consultas y recomendaciones.</p>
+                <p class="tagline">Envíanos tus consultas y recomendaciones.</p>
             </section>
         </header>
 
         <main>
-             <section id="datosContacto">
-                <p>Llámanos al 
-                    <span class="d-flex d-md-inline-flex">
-                        <a href="tel: +569345634523"> <img class="contactos-img" src="assets/img/phone.png" alt="phone"> +56 9 345634523</a>
-                    </span></p>
-                <p>También puedes escribirnos a 
-                    <span class="d-flex d-md-inline-flex">
-                        <a href="mailto:vestuariojacinta@gmail.com"> <img class="contactos-img" src="assets/img/email.webp" alt="email"> vestuariojacinta@gmail.com</a>
-                    </span>
-                </p>
-            </section>
+            <div class="container">
+                <section id="datosContacto" class="row justify-content-center">
+                    <div class="col-12 col-md-5 dato-card">
+                        <i class="bi bi-telephone-fill"></i>
+                        <div>
+                            <span class="dato-label">Llámanos al</span>
+                            <a href="tel:+56 9345634523">+56 9 345634523</a>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-5 dato-card">
+                        <i class="bi bi-envelope-fill"></i>
+                        <div>
+                            <span class="dato-label">Escríbenos a</span>
+                            <a href="mailto:vestuariojacinta@gmail.com">vestuariojacinta@gmail.com</a>
+                        </div>
+                    </div>
+                </section>
+            </div>
 
             <article class="container">
-                <form id="formContacto" class="col-md-6 mx-auto text-start p-4 rounded mb-4" novalidate>
+                <form id="formContacto" class="col-12 col-md-6 mx-auto text-start p-4 rounded mb-4" novalidate>
                     <div class="mb-3">
                         <label for="nombre" class="form-label">Nombre</label>
                         <input type="text" class="form-control" id="nombre" name="nombre" required>
@@ -137,6 +144,7 @@
         </footer>
     
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+        <script src="scripts/contacto.js"></script>
         <script src="scripts/annio.js"></script>
     </body>
 </html>

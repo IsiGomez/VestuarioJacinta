@@ -1,25 +1,51 @@
-.contactos-img{
-    margin: 0 10px 10px 10px;
-    width: 30px;
+#datosContacto {
+    margin-top: 20px;
+    padding: 10px 30px;
+    gap: 30px;
+}
+
+.dato-card {
+    display: flex;
+    gap: 14px;
+    background-color: #d9897dbe;
+    color: #2e2b5f;
+    border-radius: 16px;
+    padding: 18px 20px;
 }
 
 
-#datosContacto {
-    background-color: #d9897dbe;
-    color: #2e2b5f;
-    border-radius: 20px;
-    padding: 7px;
-    text-align: center;
+.dato-card div {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    flex: 1;
+    min-width: 0;
+}
+
+.dato-label {
+    font-size: 15px;
+}
+
+.dato-card i {
+    font-size: 25px;
 }
 
 #datosContacto a {
     text-decoration: none;
+    font-weight: bold; 
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+#datosContacto a:hover {
+    text-decoration: underline;
 }
 
 #formContacto {
     background-color: #d9897d86;
     color: #2e2b5f;
     margin-top: 25px;
+    border-top: 6px solid #d98a7d;
 }
 
 #btnLimpiar, button[type="submit"] {
@@ -35,4 +61,9 @@
 
 button[type="submit"] {
     background-color: #d98a7d;
+}
+
+#btnLimpiar:hover, button[type="submit"]:hover {
+    background-color: rgb(0, 0, 0, 0.2);
+    border-color: rgb(0, 0, 0, 0.3);
 }

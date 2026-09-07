@@ -19,11 +19,6 @@
     cursor: default;
 }
 
-@media (min-width: 768px) {
-    .navbar {
-        border-radius: 2cm;
-    }
-}
 
 .hero {
   display: flex;
