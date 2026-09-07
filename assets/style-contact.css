@@ -1,0 +1,38 @@
+.contactos-img{
+    margin: 0 10px 10px 10px;
+    width: 30px;
+}
+
+
+#datosContacto {
+    background-color: #d9897dbe;
+    color: #2e2b5f;
+    border-radius: 20px;
+    padding: 7px;
+    text-align: center;
+}
+
+#datosContacto a {
+    text-decoration: none;
+}
+
+#formContacto {
+    background-color: #d9897d86;
+    color: #2e2b5f;
+    margin-top: 25px;
+}
+
+#btnLimpiar, button[type="submit"] {
+    color: #f4efea;
+    border-color: #8c9a7b8c;
+    border-width: 2px;
+    width: 100%;
+}
+
+#btnLimpiar {
+    background-color: #8c9a7b8c;
+}
+
+button[type="submit"] {
+    background-color: #d98a7d;
+}

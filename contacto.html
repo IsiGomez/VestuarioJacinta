@@ -14,6 +14,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
         <link rel="stylesheet" href="assets/style.css">
         <link rel="stylesheet" href="assets/style-ind.css">
+        <link rel="stylesheet" href="assets/style-contact.css">
     </head>
 
     <body>
@@ -67,7 +68,47 @@
         </header>
 
         <main>
+             <section id="datosContacto">
+                <p>Llámanos al 
+                    <span class="d-flex d-md-inline-flex">
+                        <a href="tel: +569345634523"> <img class="contactos-img" src="assets/img/phone.png" alt="phone"> +56 9 345634523</a>
+                    </span></p>
+                <p>También puedes escribirnos a 
+                    <span class="d-flex d-md-inline-flex">
+                        <a href="mailto:vestuariojacinta@gmail.com"> <img class="contactos-img" src="assets/img/email.webp" alt="email"> vestuariojacinta@gmail.com</a>
+                    </span>
+                </p>
+            </section>
 
+            <article class="container">
+                <form id="formContacto" class="col-md-6 mx-auto text-start p-4 rounded mb-4" novalidate>
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre" required>
+                        <div class="invalid-feedback" id="error-nombre"></div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="correo" class="form-label">Correo electrónico</label>
+                        <input type="email" class="form-control" id="correo" name="correo" required>
+                        <div class="invalid-feedback" id="error-correo"></div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="mensaje" class="form-label">Mensaje</label>
+                        <textarea class="form-control" id="mensaje" name="mensaje" rows="4" required></textarea>
+                        <div class="invalid-feedback" id="error-mensaje"></div>
+                    </div>
+
+                    <section class="row g-3">
+                        <div class="col-12 col-md-6">
+                            <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <button type="button" id="btnLimpiar" class="btn btn-outline-secondary">Limpiar campos</button>
+                        </div>
+                    </section>
+                    <div id="confirmacionEnvio" class="alert alert-success mt-3 d-none">¡Gracias! Tu mensaje fue enviado correctamente.</div>
+                </form>
+            </article>
         </main>
 
         <footer>
