@@ -16,12 +16,11 @@
         <link rel="stylesheet" href="assets/style-ind.css">
     </head>
     <body>
-        <header>
+        <header class="hero">
             <nav class="navbar navbar-expand-md navbar-dark">
                 <div class="container-fluid">
-
                     <div class="logo">
-                        <a href="#" aria-label="Página de inicio">
+                        <a href="/" aria-label="Página de inicio">
                             <img src="assets/img/Jacinta.svg" alt="Inicio" width="160" height="100">
                         </a>
                     </div>
@@ -34,13 +33,13 @@
                     <div class="collapse navbar-collapse text-end" id="navMenu">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <span class="nav-link pag-actual">Inicio</span>
+                                <a class="nav-link" href="/">Inicio</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="catalogo.html">Cátalogo</a>
+                            <a class="nav-link pag-actual" href="catalogo.html">Cátalogo</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Nosotros</a>
+                                <a class="nav-link" href="nosotros.html">Nosotros</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Blog</a>
@@ -55,33 +54,75 @@
                     </div>
                 </div>
             </nav>
-        </header>
-        <main>
-            <h1>Productos</h1>
-            <div class="productos">
 
+            <section class="hero-content text-center py-4">
+                <h1>Nuestros Productos</h1>
+            </section>
+        </header>
+
+        <main class="container my-5">
+            <div class="productos">
                 <div class="producto">
-                    <a href="detalle.html" onclick="guardarProductoSeleccionado('Polera blanca', 10000, 'assets/productos/1.webp')">
+                    <a href="detalle.html" onclick="guardarProductoSeleccionado('Polera azul marino', 8990, 'assets/productos/1.webp')">
                         <img src="assets/productos/1.webp" alt="Polera blanca" width="150">
-                        <h3>Polera blanca</h3>
+                        <h3>Polera azul marino</h3>
                     </a>
-                    <p>$10000</p>
-                    <button onclick="agregarProducto('Polera blanca', 10000, 'assets/productos/1.webp', 1)">Añadir</button>
+                    <p>$8990</p>
+                    <button class="btn btn-outline-primary" onclick="agregarProducto('Polera azul marino', 8990, 'assets/productos/1.webp', 1)">Añadir</button>
                 </div>
                 <div class="producto">
-                    <a href="detalle.html" onclick="guardarProductoSeleccionado('Polera verde', 12000, 'assets/productos/2.webp')">
+                    <a href="detalle.html" onclick="guardarProductoSeleccionado('Polera negra', 8990, 'assets/productos/2.webp')">
                         <img src="assets/productos/2.webp" alt="Polera verde" width="150">
+                        <h3>Polera negra</h3>
+                    </a>
+                    <p>$8990</p>
+                    <button class="btn btn-outline-primary" onclick="agregarProducto('Polera negra', 8990, 'assets/productos/2.webp', 1)">Añadir</button>
+                </div>
+                <div class="producto">
+                    <a href="detalle.html" onclick="guardarProductoSeleccionado('Polera verde', 8990, 'assets/productos/3.webp')">
+                        <img src="assets/productos/3.webp" alt="Polera verde" width="150">
                         <h3>Polera verde</h3>
                     </a>
-                    <p>$12000</p>
-                    <button onclick="agregarProducto('Polera verde', 12000, 'assets/productos/2.webp', 1)">Añadir</button>
+                    <p>$8990</p>
+                    <button class="btn btn-outline-primary" onclick="agregarProducto('Polera verde', 8990, 'assets/productos/3.webp', 1)">Añadir</button>
                 </div>
-
+                <div class="producto">
+                    <a href="detalle.html" onclick="guardarProductoSeleccionado('Polera azul', 8990, 'assets/productos/4.webp')">
+                        <img src="assets/productos/4.webp" alt="Polera verde" width="150">
+                        <h3>Polera azul</h3>
+                    </a>
+                    <p>$8990</p>
+                    <button class="btn btn-outline-primary" onclick="agregarProducto('Polera azul', 8990, 'assets/productos/4.webp', 1)">Añadir</button>
+                </div>
             </div>
         </main>
-        <footer>
 
+        <footer>
+            <div class="container">
+                <div class="row text-center text-sm-center">
+                    <div id="footer-tienda" class="col-12 col-sm-6 mb-4">
+                        <h5>Vestuario Jacinta</h5>
+                        <p>Tu clóset ideal para cada momento, desde 1956.</p>
+                    </div>
+
+                    <div class="col-12 col-sm-6 mb-4">
+                        <h5>Síguenos</h5>
+                        <a href="https://www.instagram.com/jacintatienda/?hl=es" target="_blank" rel="noopener noreferrer" class="footer-icon" aria-label="Instagram">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/somosjacintatienda/?locale=es_LA" target="_blank" rel="noopener noreferrer" class="footer-icon" aria-label="Facebook">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <hr>
+                <p class="text-center mb-0">&copy; <span id="anioActual"></span> Vestuario Jacinta. Todos los derechos reservados.</p>
+            </div>
         </footer>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
         <script src="scripts/catalogo.js"></script>
+        <script src="scripts/annio.js"></script>
     </body>
 </html>

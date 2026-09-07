@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html lang="es">
     <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Catálogo</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Detalles</title>
 
-            <link rel="preconnect" href="https://fonts.googleapis.com">
-            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-            <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 
-            <link rel="stylesheet" href="assets/style.css">
-        </head>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
+        <link rel="stylesheet" href="assets/style.css">
+        <link rel="stylesheet" href="assets/style-ind.css">
+    </head>
     <body>
-        <header>
+        <header class="hero">
             <nav class="navbar navbar-expand-md navbar-dark">
                 <div class="container-fluid">
-
                     <div class="logo">
-                        <a href="#" aria-label="Página de inicio">
+                        <a href="/" aria-label="Página de inicio">
                             <img src="assets/img/Jacinta.svg" alt="Inicio" width="160" height="100">
                         </a>
                     </div>
@@ -31,13 +33,13 @@
                     <div class="collapse navbar-collapse text-end" id="navMenu">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <span class="nav-link pag-actual">Inicio</span>
+                                <a class="nav-link" href="/">Inicio</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="catalogo.html">Cátalogo</a>
+                                <a class="nav-link pag-actual" href="catalogo.html">Cátalogo</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Nosotros</a>
+                                <a class="nav-link" href="nosotros.html">Nosotros</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Blog</a>
@@ -52,23 +54,59 @@
                     </div>
                 </div>
             </nav>
+
+            <section class="hero-content text-center py-4">
+                <h1>Detalles del producto</h1>
+            </section>
         </header>
-        <main>
-            <a href="catalogo.html">volver</a>
-            <div>
-                <img id="detalle-img" src="" width="300">
-                <h1 id="detalle-nombre">Nombre</h1>
-                <h2 id="detalle-precio">$0</h2>
 
-                <label>Cantidad:</label>
-                <input type="number" id="cantidad" value="1" min="1">
+        <main class="container my-5">
+            <a href="catalogo.html" class="btn btn-outline-secondary mb-4">&larr; Volver al catálogo</a>
+            
+            <div class="row align-items-center">
+                <div class="col-12 col-md-6 text-center">
+                    <img id="detalle-img" src="" alt="Producto" class="img-fluid rounded" style="max-height: 400px; object-fit: contain;">
+                </div>
+                <div class="col-12 col-md-6">
+                    <h1 id="detalle-nombre" class="display-6">Nombre</h1>
+                    <h2 id="detalle-precio" class="text-primary my-3">$0</h2>
 
-                <button onclick="sumarDesdeDetalle()">Añadir al carrito</button>
+                    <div class="my-4 d-flex align-items-center gap-3">
+                        <label for="cantidad" class="form-label mb-0">Cantidad:</label>
+                        <input type="number" id="cantidad" class="form-control" value="1" min="1" style="width: 80px;">
+                    </div>
+
+                    <button class="btn btn-primary btn-lg" onclick="sumarDesdeDetalle()">Añadir al carrito</button>
+                </div>
             </div>
         </main>
-        <footer>
 
+        <footer>
+            <div class="container">
+                <div class="row text-center text-sm-center">
+                    <div id="footer-tienda" class="col-12 col-sm-6 mb-4">
+                        <h5>Vestuario Jacinta</h5>
+                        <p>Tu clóset ideal para cada momento, desde 1956.</p>
+                    </div>
+
+                    <div class="col-12 col-sm-6 mb-4">
+                        <h5>Síguenos</h5>
+                        <a href="https://www.instagram.com/jacintatienda/?hl=es" target="_blank" rel="noopener noreferrer" class="footer-icon" aria-label="Instagram">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/somosjacintatienda/?locale=es_LA" target="_blank" rel="noopener noreferrer" class="footer-icon" aria-label="Facebook">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <hr>
+                <p class="text-center mb-0">&copy; <span id="anioActual"></span> Vestuario Jacinta. Todos los derechos reservados.</p>
+            </div>
         </footer>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
         <script src="scripts/catalogo.js"></script>
+        <script src="scripts/annio.js"></script>
     </body>
 </html>

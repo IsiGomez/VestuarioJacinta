@@ -81,7 +81,7 @@ function pintarCarrito() {
     contenedorCarrito.innerHTML = "";
 
     if (carrito.length === 0) {
-        contenedorCarrito.innerHTML = "<p>El carrito está vacío.</p>";
+        contenedorCarrito.innerHTML = '<div class="alert alert-light text-center my-4">El carrito está vacío.</div>';
         let total = document.getElementById("precio-total");
         if (total) total.innerText = "Total: $0";
         return;
@@ -95,17 +95,21 @@ function pintarCarrito() {
         sumaTotal = sumaTotal + subtotal;
 
         contenedorCarrito.innerHTML += `
-            <div style="border-bottom: 1px solid #ccc; padding: 10px; display: flex; align-items: center; gap: 15px;">
-                <img src="${item.imagen}" width="60">
-                <div>
-                    <h4>${item.nombre}</h4>
-                    <p>Precio unitario: $${item.precio}</p>
-                    <p><strong>Cantidad: ${item.cantidad}</strong> (Subtotal: $${subtotal})</p>
+            <div class="row align-items-center py-3 border-bottom">
+                <div class="col-12 col-sm-2 text-center text-sm-start mb-2 mb-sm-0">
+                    <img src="${item.imagen}" alt="${item.nombre}" class="img-fluid rounded" style="max-height: 80px; object-fit: cover;">
                 </div>
-                <div style="margin-left: auto; display: flex; align-items: center; gap: 5px;">
-                    <input type="number" id="quitar-${i}" min="1" max="${item.cantidad}" value="1" style="width: 50px;">
-                    <button onclick="eliminarCantidad(${i})">Quitar</button>
-                    <button onclick="eliminarProducto(${i})">Borrar Todo</button>
+                <div class="col-12 col-sm-5 text-center text-sm-start mb-2 mb-sm-0">
+                    <h5 class="mb-1">${item.nombre}</h5>
+                    <p class="text-muted mb-0 small">Precio unitario: $${item.precio}</p>
+                    <p class="mb-0"><strong>Cantidad: ${item.cantidad}</strong> <span class="text-primary font-monospace">(Subtotal: $${subtotal})</span></p>
+                </div>
+                <div class="col-12 col-sm-5 d-flex justify-content-center justify-content-sm-end align-items-center gap-2">
+                    <input type="number" id="quitar-${i}" class="form-control text-center" min="1" max="${item.cantidad}" value="1" style="width: 70px;">
+                    <button class="btn btn-sm btn-outline-secondary" onclick="eliminarCantidad(${i})">Quitar</button>
+                    <button class="btn btn-sm btn-danger" onclick="eliminarProducto(${i})">
+                        <i class="bi bi-trash"></i> Borrar Todo
+                    </button>
                 </div>
             </div>
         `;

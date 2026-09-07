@@ -49,6 +49,7 @@ a {
     padding: 20px;
     border-radius: 10px;
     width: 420px;
+    min-height: 420px;
     max-width: 90vw;
 }
 
@@ -58,7 +59,8 @@ a {
     text-align: center;
 }
 
-.secc-form input {
+.secc-form input,
+.secc-form select {
   display: block;
   width: 100%;
   box-sizing: border-box;
@@ -66,21 +68,114 @@ a {
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
+  background-color: #ffffff;
+  color: #333333;
+  font-size: 14px;
+  outline: none;
+}
+
+.secc-form select:disabled {
+  background-color: #e9ecef;
+  color: #6c757d;
+  cursor: not-allowed;
+  border-color: #dee2e6;
+}
+
+.secc-form label {
+  display: block;
+  text-align: left;
+  font-weight: 500;
+  font-size: 0.9rem;
+  margin-top: 6px;
+  margin-bottom: 2px;
 }
 
 .submit-btn {
   width: 100%;
   box-sizing: border-box;
   padding: 10px;
-  border: none;
-  border-radius: 4px;
-  background-color:  #d98a7d;
-  color: #fafafa;
+  border: 3px solid #f89d8f;
+  border-radius: 10px;
+  background-color:  #fafafa;
+  color: #f89d8f;
   cursor: pointer;
   font-size: 15px;
   margin-top: 16px;
+  transition: transform 0.2s ease;
+}
+
+.submit-btn:hover {
+    background-color: #f89d8f;
+    color: #fafafa;
+    transition: transform 0.2s ease;
+    border: 3px solid #f89d8f;
 }
 
 .error-msg{
     color: red;
+}
+
+.productos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.producto {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.producto:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.producto a {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.producto img {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.producto h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 8px 0 4px;
+  color: #2b2b2b;
+}
+
+.producto p {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #555555;
+  margin-bottom: 14px;
+}
+
+.producto button {
+  margin-top: auto;
+  width: 100%;
+  padding: 8px 0;
+  border-radius: 6px;
+  font-weight: 500;
 }
