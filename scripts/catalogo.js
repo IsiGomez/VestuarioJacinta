@@ -1,3 +1,75 @@
+// Arreglo de productos según rúbrica
+const listaProductos = [
+    {
+        id: 1,
+        nombre: "Polera azul marino",
+        precio: 8990,
+        imagen: "assets/productos/1.webp"
+    },
+    {
+        id: 2,
+        nombre: "Polera negra",
+        precio: 8990,
+        imagen: "assets/productos/2.webp"
+    },
+    {
+        id: 3,
+        nombre: "Polera verde",
+        precio: 8990,
+        imagen: "assets/productos/3.webp"
+    },
+    {
+        id: 4,
+        nombre: "Polera azul",
+        precio: 8990,
+        imagen: "assets/productos/4.webp"
+    },
+    {
+        id: 5,
+        nombre: "Pantalón negro",
+        precio: 19990,
+        imagen: "assets/productos/5.webp"
+    },
+    {
+        id: 6,
+        nombre: "Pantalón blanco",
+        precio: 19990,
+        imagen: "assets/productos/6.webp"
+    },
+    {
+        id: 7,
+        nombre: "Pantalón jeans azules",
+        precio: 19990,
+        imagen: "assets/productos/7.webp"
+    },
+    {
+        id: 8,
+        nombre: "Pantalón marrón",
+        precio: 19990,
+        imagen: "assets/productos/8.webp"
+    }
+];
+
+function renderizarProductos() {
+    const contenedor = document.getElementById("contenedor-productos");
+    if (!contenedor) return;
+
+    contenedor.innerHTML = "";
+
+    listaProductos.forEach(prod => {
+        contenedor.innerHTML += `
+            <div class="producto">
+                <a href="detalle.html" onclick="guardarProductoSeleccionado('${prod.nombre}', ${prod.precio}, '${prod.imagen}')">
+                    <img src="${prod.imagen}" alt="${prod.nombre}">
+                    <h3>${prod.nombre}</h3>
+                </a>
+                <p>$${prod.precio}</p>
+                <button class="btn btn-outline-primary" onclick="agregarProducto('${prod.nombre}', ${prod.precio}, '${prod.imagen}', 1)">Añadir</button>
+            </div>
+        `;
+    });
+}
+
 function obtenerCarrito() {
     let datos = localStorage.getItem("miCarrito");
     if (datos === null) {
@@ -9,6 +81,18 @@ function obtenerCarrito() {
 function guardarCarrito(lista) {
     localStorage.setItem("miCarrito", JSON.stringify(lista));
     actualizarContadorNavbar();
+}
+
+function procesarPago() {
+    let carrito = obtenerCarrito();
+
+    if (carrito.length === 0) {
+        alert("El carrito está vacío. Agrega productos antes de pagar.");
+        return;
+    }
+
+    alert("¡Compra exitosa! Gracias por tu preferencia.");
+    vaciarCarrito();
 }
 
 function actualizarContadorNavbar() {
@@ -64,7 +148,15 @@ if (etiquetaNombre) {
 }
 
 function sumarDesdeDetalle() {
-    let cantidadElegida = parseInt(document.getElementById("cantidad").value);
+    let inputCantidad = document.getElementById("cantidad");
+    let cantidadElegida = parseInt(inputCantidad.value);
+
+    if (isNaN(cantidadElegida) || cantidadElegida < 1) {
+        alert("La cantidad mínima para añadir es 1.");
+        inputCantidad.value = 1;
+        return;
+    }
+
     let nombre = localStorage.getItem("nombreElegido");
     let precio = parseInt(localStorage.getItem("precioElegido"));
     let imagen = localStorage.getItem("imagenElegida");
@@ -151,3 +243,4 @@ function vaciarCarrito() {
 
 actualizarContadorNavbar();
 pintarCarrito();
+renderizarProductos();

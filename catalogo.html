@@ -42,7 +42,7 @@
                                 <a class="nav-link" href="nosotros.html">Nosotros</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Blog</a>
+                                <a class="nav-link" href="blog.html">Blog</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" id="cont-carrito" href="carrito.html">Carrito (0)</a>
@@ -61,40 +61,7 @@
         </header>
 
         <main class="container my-5">
-            <div class="productos">
-                <div class="producto">
-                    <a href="detalle.html" onclick="guardarProductoSeleccionado('Polera azul marino', 8990, 'assets/productos/1.webp')">
-                        <img src="assets/productos/1.webp" alt="Polera blanca" width="150">
-                        <h3>Polera azul marino</h3>
-                    </a>
-                    <p>$8990</p>
-                    <button class="btn btn-outline-primary" onclick="agregarProducto('Polera azul marino', 8990, 'assets/productos/1.webp', 1)">Añadir</button>
-                </div>
-                <div class="producto">
-                    <a href="detalle.html" onclick="guardarProductoSeleccionado('Polera negra', 8990, 'assets/productos/2.webp')">
-                        <img src="assets/productos/2.webp" alt="Polera verde" width="150">
-                        <h3>Polera negra</h3>
-                    </a>
-                    <p>$8990</p>
-                    <button class="btn btn-outline-primary" onclick="agregarProducto('Polera negra', 8990, 'assets/productos/2.webp', 1)">Añadir</button>
-                </div>
-                <div class="producto">
-                    <a href="detalle.html" onclick="guardarProductoSeleccionado('Polera verde', 8990, 'assets/productos/3.webp')">
-                        <img src="assets/productos/3.webp" alt="Polera verde" width="150">
-                        <h3>Polera verde</h3>
-                    </a>
-                    <p>$8990</p>
-                    <button class="btn btn-outline-primary" onclick="agregarProducto('Polera verde', 8990, 'assets/productos/3.webp', 1)">Añadir</button>
-                </div>
-                <div class="producto">
-                    <a href="detalle.html" onclick="guardarProductoSeleccionado('Polera azul', 8990, 'assets/productos/4.webp')">
-                        <img src="assets/productos/4.webp" alt="Polera verde" width="150">
-                        <h3>Polera azul</h3>
-                    </a>
-                    <p>$8990</p>
-                    <button class="btn btn-outline-primary" onclick="agregarProducto('Polera azul', 8990, 'assets/productos/4.webp', 1)">Añadir</button>
-                </div>
-            </div>
+            <div id="contenedor-productos" class="productos"></div>
         </main>
 
         <footer>
