@@ -29,7 +29,7 @@ if (formContacto) {
         const valor = campoMensaje.value.trim();
         if (valor === "") return "El mensaje es obligatorio.";
         if (valor.length < 10) return "Escribe al menos 10 caracteres.";
-        if (valor.length > 500) return "El mensaje no puede tener mas de 500 caracteres."
+        if (valor.length > 500) return "El mensaje no puede tener más de 500 caracteres.";
         return "";
     }
 
