@@ -152,7 +152,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             if (esValido) {
-                window.location.href = "/.";
+                window.location.href = "index.html";
             }
         });
     }
@@ -182,7 +182,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 mostrarError("error-reg-run", "El run debe ser de al menos 7 caracteres");
                 esValido = false;
             } else if (!validarRun(valorRun.toUpperCase())) {
-                mostrarError("error-reg-run", "El run no es valido");
+                mostrarError("error-reg-run", "El run no es válido");
                 esValido = false;
             }
 

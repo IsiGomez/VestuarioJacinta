@@ -64,7 +64,7 @@ function renderizarProductos() {
                     <h3>${prod.nombre}</h3>
                 </a>
                 <p>$${prod.precio}</p>
-                <button class="btn btn-outline-primary" onclick="agregarProducto('${prod.nombre}', ${prod.precio}, '${prod.imagen}', 1)">Añadir</button>
+                <button class="btn w-100 btn-principal" onclick="agregarProducto('${prod.nombre}', ${prod.precio}, '${prod.imagen}', 1)">Añadir</button>
             </div>
         `;
     });
@@ -194,12 +194,12 @@ function pintarCarrito() {
                 <div class="col-12 col-sm-5 text-center text-sm-start mb-2 mb-sm-0">
                     <h5 class="mb-1">${item.nombre}</h5>
                     <p class="text-muted mb-0 small">Precio unitario: $${item.precio}</p>
-                    <p class="mb-0"><strong>Cantidad: ${item.cantidad}</strong> <span class="text-primary font-monospace">(Subtotal: $${subtotal})</span></p>
+                    <p class="mb-0"><strong>Cantidad: ${item.cantidad}</strong> <span class="font-monospace subtotal">(Subtotal: $${subtotal})</span></p>
                 </div>
                 <div class="col-12 col-sm-5 d-flex justify-content-center justify-content-sm-end align-items-center gap-2">
                     <input type="number" id="quitar-${i}" class="form-control text-center" min="1" max="${item.cantidad}" value="1" style="width: 70px;">
                     <button class="btn btn-sm btn-outline-secondary" onclick="eliminarCantidad(${i})">Quitar</button>
-                    <button class="btn btn-sm btn-danger" onclick="eliminarProducto(${i})">
+                    <button class="btn btn-sm btn-del" onclick="eliminarProducto(${i})">
                         <i class="bi bi-trash"></i> Borrar Todo
                     </button>
                 </div>

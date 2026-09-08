@@ -1,0 +1,56 @@
+#lista-carrito, 
+#precio-total {
+  color: #2e2b5f;
+}
+
+.subtotal {
+  color: #8B87A0;
+}
+
+.btn-pay {
+  background-color: #afc98f;
+  color: white;
+  border-color: #9db483;
+  border-width: 3px;
+}
+.btn-pay:hover {
+  background-color: #9db483;
+  color: white;
+  border-color: #7a8c65;
+}
+.btn-pay:active,
+.btn-pay:active:focus {
+  background-color: #87b255;
+  color: white;
+  border-color: #6e6a7f;
+}
+.btn-pay:focus-visible {
+  background-color: #b7c9a1;
+  border-color: #6e6a7f;
+  color: white;
+  box-shadow: 0 0 0 0.25rem rgba(86, 85, 99, 0.35);
+}
+
+.btn-del {
+  background-color: #ce5745;
+  color: white;
+  border-color: #a54434;
+  border-width: 3px;
+}
+.btn-del:hover {
+  background-color: #a54434;
+  color: white;
+  border-color: #7b3126;
+}
+.btn-del:active,
+.btn-del:active:focus {
+  background-color: #8f4337;
+  border-color: #2e2b5f;
+  color: white;
+}
+.btn-del:focus-visible {
+  background-color: #ce5745;
+  border-color: #2e2b5f;
+  color: white;
+  box-shadow: 0 0 0 0.25rem rgba(46, 43, 95, 0.35);
+}

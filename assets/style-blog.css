@@ -1,0 +1,19 @@
+.card-img-blog {
+    height: 250px;
+    object-fit: cover;
+    object-position: top;
+}
+
+.card-img-blog-det {
+    height: 450px; 
+    object-fit: cover; 
+    object-position: top;
+}
+
+.info-blog {
+    background-color: #cfd2cdbb;
+    padding: 25px;
+    line-height: 1.8;
+    border-radius: 10px;
+    text-align: justify;
+}

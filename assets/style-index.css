@@ -1,0 +1,10 @@
+.videos-intro h2 {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+video {
+    max-width: 70%;
+    border-radius: 10px;
+}

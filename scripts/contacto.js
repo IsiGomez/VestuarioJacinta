@@ -12,7 +12,7 @@ if (formContacto) {
     function validarNombre() {
         const valor = campoNombre.value.trim();
         if (valor === "") return "El nombre es obligatorio.";
-        if (valor.length < 6) return "El nombre debe tener al menos 10 caracteres.";
+        if (valor.length < 6) return "El nombre debe tener al menos 6 caracteres.";
         if (valor.length > 100) return "El nombre debe tener menos de 100 caracteres."
         return "";
     }
@@ -29,7 +29,7 @@ if (formContacto) {
         const valor = campoMensaje.value.trim();
         if (valor === "") return "El mensaje es obligatorio.";
         if (valor.length < 10) return "Escribe al menos 10 caracteres.";
-        if (valor.length > 500) return "El mensaje no puede tener mas de 500 caracteres."
+        if (valor.length > 500) return "El mensaje no puede tener más de 500 caracteres.";
         return "";
     }
 
@@ -81,22 +81,3 @@ if (formContacto) {
         btnLimpiar.addEventListener("click", limpiarFormulario);
     }
 }
-
-document.querySelectorAll('.carousel').forEach(carrusel => {
-    const indicadores = carrusel.querySelector('.carousel-indicators');
-    const items = carrusel.querySelectorAll('.carousel-item');
-
-    if (indicadores && items.length > 0) {
-        items.forEach((item, indice) => {
-            const boton = document.createElement('button');
-            boton.type = 'button';
-            boton.setAttribute('data-bs-target', '#${carrusel.id}');
-            boton.setAttribute('data-bs-slide-to', indice);
-            if (indice === 0) {
-                boton.classList.add('active');
-                boton.setAttribute('aria-current', 'true');
-            }
-            indicadores.appendChild(boton);
-        });
-    }
-});

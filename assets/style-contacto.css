@@ -1,0 +1,104 @@
+#datosContacto {
+    margin-top: 20px;
+    padding: 10px 30px;
+    gap: 30px;
+}
+
+.dato-card {
+    display: flex;
+    gap: 14px;
+    background-color: #d9897dbe;
+    color: #2e2b5f;
+    border-radius: 16px;
+    padding: 18px 20px;
+}
+
+
+.dato-card div {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    flex: 1;
+    min-width: 0;
+}
+
+.dato-label {
+    font-size: 15px;
+}
+
+.dato-card i {
+    font-size: 25px;
+}
+
+#datosContacto a {
+    text-decoration: none;
+    font-weight: bold; 
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+#datosContacto a:hover {
+    text-decoration: underline;
+}
+
+#formContacto {
+    background-color: #d9897d86;
+    color: #2e2b5f;
+    margin-top: 25px;
+    border-top: 6px solid #d98a7d;
+}
+
+#formContacto #btnLimpiar, 
+#formContacto button[type="submit"] {
+    width: 100%;
+    border-width: 2px;
+    color: #f4efea;
+}
+
+#formContacto #btnLimpiar {
+    background-color: #8c9a7b8c;
+    border-color: #8c9a7b;
+}
+#formContacto button[type="submit"] {
+    background-color: #d98a7d;
+    border-color: #d98a7d;
+}
+
+#formContacto #btnLimpiar:hover {
+    background-color: #79876a;
+    border-color: #69765b;
+    color: #ffffff;
+}
+#formContacto button[type="submit"]:hover {
+    background-color: #c7786b;
+    border-color: #b5675a;
+    color: #ffffff;
+}
+
+#formContacto #btnLimpiar:active,
+#formContacto #btnLimpiar:active:focus {
+    background-color: #5b674e;
+    border-color: #4a543f;
+    color: #ffffff;
+}
+#formContacto button[type="submit"]:active,
+#formContacto button[type="submit"]:active:focus {
+    background-color: #a8584c;
+    border-color: #92473c;
+    color: #ffffff;
+}
+
+#formContacto #btnLimpiar:focus-visible {
+    background-color: #79876a;
+    border-color: #2e2b5f;
+    color: #ffffff;
+    border-color: #2e2b5f;
+    box-shadow: 0 0 0 0.25rem rgba(46, 43, 95, 0.35);
+}
+#formContacto button[type="submit"]:focus-visible {
+    background-color: #c7786b;
+    border-color: #2e2b5f;
+    color: #ffffff;
+    border-color: #2e2b5f;
+    box-shadow: 0 0 0 0.25rem rgba(46, 43, 95, 0.35);
+}

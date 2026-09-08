@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Carrito de compras</title>
+        <link rel="icon" type="image/png" href="assets/img/icono.png">
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,16 +14,17 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
         <link rel="stylesheet" href="assets/style.css">
-        <link rel="stylesheet" href="assets/style-ind.css">
+        <link rel="stylesheet" href="assets/style-carrito.css">
     </head>
+
     <body>
         <header class="hero">
-            <nav class="navbar navbar-expand-md navbar-dark">
+            <nav class="navbar navbar-expand-lg navbar-dark">
                 <div class="container-fluid">
 
                     <div class="logo">
-                        <a href="/" aria-label="Página de inicio">
-                            <img src="assets/img/Jacinta.svg" alt="Inicio" width="160" height="100">
+                        <a href="index.html" aria-label="Página de inicio">
+                            <img src="assets/img/Jacinta.svg" alt="Vestuario Jacinta" width="160" height="100">
                         </a>
                     </div>
 
@@ -34,22 +36,25 @@
                     <div class="collapse navbar-collapse text-end" id="navMenu">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link" href="/">Inicio</a>
+                                <a class="nav-link" href="index.html">Inicio</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="catalogo.html">Cátalogo</a>
+                                <a class="nav-link" href="catalogo.html">Catálogo</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="nosotros.html">Nosotros</a>
                             </li>
                             <li class="nav-item">
+                                <a class="nav-link" href="contacto.html">Contacto</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link" href="blog.html">Blog</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link pag-actual" id="cont-carrito" href="carrito.html">Carrito (0)</a>
+                                <span class="nav-link pag-actual" id="cont-carrito">Carrito (0)</span>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="login.html">Iniciar sesión</a>
+                                <a class="nav-link" href="login.html">Cuenta</a>
                             </li>
                         </ul>
                     </div>
@@ -64,7 +69,7 @@
         <main class="container my-5">
             <div class="d-flex justify-content-between align-items-center mb-4">
                 <a href="catalogo.html" class="btn btn-outline-secondary">&larr; Seguir comprando</a>
-                <button class="btn btn-outline-danger" onclick="vaciarCarrito()">Vaciar todo el carrito</button>
+                <button class="btn btn-del" onclick="vaciarCarrito()">Vaciar todo el carrito</button>
             </div>
             
             <div class="card p-3 shadow-sm mb-4">
@@ -72,8 +77,8 @@
             </div>
 
             <div class="d-flex justify-content-end align-items-center gap-3">
-                <h3 id="precio-total" class="text-primary mb-0">Total: $0</h3>
-                <button class="btn btn-success btn-lg" onclick="procesarPago()">Pagar</button>
+                <h3 id="precio-total" class="mb-0">Total: $0</h3>
+                <button class="btn btn-lg btn-pay" onclick="procesarPago()">Pagar</button>
             </div>
         </main>
 
