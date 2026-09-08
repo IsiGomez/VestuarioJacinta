@@ -20,9 +20,8 @@
         <header class="hero">
             <nav class="navbar navbar-expand-md navbar-dark">
                 <div class="container-fluid">
-
                     <div class="logo">
-                        <a href="index.html" aria-label="Página de inicio">
+                        <a href="/" aria-label="Página de inicio">
                             <img src="assets/img/Jacinta.svg" alt="Inicio" width="160" height="100">
                         </a>
                     </div>
@@ -35,10 +34,10 @@
                     <div class="collapse navbar-collapse text-end" id="navMenu">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link" href="index.html">Inicio</a>
+                                <a class="nav-link" href="/">Inicio</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Cátalogo</a>
+                                <a class="nav-link" href="catalogo.html">Cátalogo</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="nosotros.html">Nosotros</a>
@@ -47,19 +46,18 @@
                                 <a class="nav-link" href="contacto.html">Contacto</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Blog</a>
+                                <a class="nav-link" href="blog.html">Blog</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Carrito de compras</a>
+                                <a class="nav-link" id="cont-carrito" href="carrito.html">Carrito (0)</a>
                             </li>
-                            <li class="nav-item">
-                                <span class="nav-link pag-actual">Iniciar sesión</span>
+                            <li class="nav-item pag-actual">
+                                <a class="nav-link" href="login.html">Iniciar sesión</a>
                             </li>
                         </ul>
                     </div>
                 </div>
             </nav>
-
         </header>
 
         <main>
@@ -79,12 +77,12 @@
                         <span class="error-msg" id="error-log-pass"></span>
                     </div>
 
-                    <button type="submit" class="submit-btn">Iniciar Sesión</button>
-
                     <p class="texto-login">
                         ¿Todavía no tienes una cuenta?
                         <a href="#" id="link-registro">Registrarme</a>
                     </p>
+
+                    <button type="submit" class="submit-btn">Iniciar Sesión</button>
                 </form>
 
                 <form id="secc-reg" class="secc-form oculto" novalidate>
@@ -108,11 +106,38 @@
                         <span class="error-msg" id="error-reg-apll"></span>
                     </div>
                     
-                    
                     <div>
                         <label for="reg-email">Correo electrónico</label>
                         <input type="email" name="email" id="reg-email" placeholder="ejemplo@correo.com" autocomplete="email" required>
                         <span class="error-msg" id="error-reg-email"></span>
+                    </div>
+
+                    <div>
+                        <label for="reg-tel">Teléfono (opcional)</label>
+                        <input type="tel" id="reg-tel" name="telefono" placeholder="+56912345678" maxlength="15">
+                        <span class="error-msg" id="error-reg-tel"></span>
+                    </div>
+
+                    <div class="grupo-form">
+                        <label for="reg-region">Región</label>
+                        <select id="reg-region" name="region" required>
+                            <option value="">Seleccione una región</option>
+                        </select>
+                        <span class="error-msg" id="error-reg-region"></span>
+                    </div>
+
+                    <div class="grupo-form">
+                        <label for="reg-comuna">Comuna</label>
+                        <select id="reg-comuna" name="comuna" required disabled>
+                            <option value="">Seleccione una comuna</option>
+                        </select>
+                        <span class="error-msg" id="error-reg-comuna"></span>
+                    </div>
+
+                    <div>
+                        <label for="reg-dir">Dirección</label>
+                        <input type="text" id="reg-dir" name="direccion" placeholder="Ej: Av. Providencia 1234, Depto 402" maxlength="300" required>
+                        <span class="error-msg" id="error-reg-dir"></span>
                     </div>
                     
                     <div>
@@ -133,12 +158,12 @@
                         <span class="error-msg" id="error-reg-date"></span>
                     </div>
 
-                    <button type="submit" class="submit-btn">Registrarme</button>
-
                     <p class="texto-registro">
                         ¿Ya tienes una cuenta?
                         <a href="#" id="link-login">Iniciar Sesión</a>
                     </p>
+
+                    <button type="submit" class="submit-btn">Registrarme</button>
                 </form>
             </section>
         </main>
@@ -170,6 +195,7 @@
     
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
         <script src="scripts/annio.js"></script>
+        <script src="scripts/catalogo.js"></script>
         <script src="scripts/login.js"></script>
     </body>
 </html>
