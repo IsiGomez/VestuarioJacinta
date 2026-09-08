@@ -172,10 +172,86 @@ a {
   margin-bottom: 14px;
 }
 
-.producto button {
-  margin-top: auto;
+
+.producto .btn-add {
+  background-color: #d98a7d;
+  color: #ffffff;
   width: 100%;
-  padding: 8px 0;
-  border-radius: 6px;
-  font-weight: 500;
+  border-color: #c7786b;
+  border-width: 3px;
+}
+.btn-lg, 
+.btn-blog  {
+  background-color: #d98a7d;
+  color: #ffffff;
+  border-color: #c7786b;
+  border-width: 3px;
+}
+
+.producto .btn-add:hover,
+.btn-lg:hover,
+a.btn.btn-blog:hover{
+    background-color: #c7786b;
+    border-color: #b5675a;
+    color: #ffffff;
+}
+
+.producto .btn-add:active,
+.producto .btn-add:active:focus,
+.btn-lg:active,
+.btn-lg:active:focus,
+.btn-blog:active,
+.btn-blog:active:focus {
+  background-color: #a8584c;
+  color: #ffffff;
+  border-color: #92473c;
+}
+
+.producto .btn-add:focus-visible,
+.btn-lg:focus-visible,
+.btn-blog:focus-visible {
+  background-color: #c7786b;
+  border-color: #2e2b5f;
+  color: #ffffff;
+  box-shadow: 0 0 0 0.25rem rgba(46, 43, 95, 0.35);
+}
+
+.prod-det {
+  color: #2e2b5f;
+}
+#detalle-precio {
+  color: #2e2b5f;
+}
+
+.btn-del {
+  background-color: #ce5745;
+  color: white;
+  border-color: #a54434;
+  border-width: 3px;
+}
+.btn-del:hover {
+  background-color: #a54434;
+  color: white;
+  border-color: #7b3126;
+}
+.btn-del:active,
+.btn-del:active:focus {
+  background-color: #8f4337;
+  border-color: #2e2b5f;
+  color: white;
+}
+.btn-del:focus-visible {
+  background-color: #ce5745;
+  border-color: #2e2b5f;
+  color: white;
+  box-shadow: 0 0 0 0.25rem rgba(46, 43, 95, 0.35);
+}
+
+#lista-carrito, 
+#precio-total {
+  color: #2e2b5f;
+}
+
+.subtotal {
+  color: #8B87A0;
 }

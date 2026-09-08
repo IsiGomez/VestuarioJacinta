@@ -1,0 +1,11 @@
+.card-img-blog {
+    height: 250px;
+    object-fit: cover;
+    object-position: top;
+}
+
+.card-img-blog-det {
+    height: 450px; 
+    object-fit: cover; 
+    object-position: top;
+}
