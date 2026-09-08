@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Iniciar Sesión</title>
+        <title>Cuenta</title>
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,11 +18,11 @@
 
     <body>
         <header class="hero">
-            <nav class="navbar navbar-expand-md navbar-dark">
+            <nav class="navbar navbar-expand-lg navbar-dark">
                 <div class="container-fluid">
                     <div class="logo">
-                        <a href="/" aria-label="Página de inicio">
-                            <img src="assets/img/Jacinta.svg" alt="Inicio" width="160" height="100">
+                        <a href="index.html" aria-label="Página de inicio">
+                            <img src="assets/img/Jacinta.svg" alt="Logo" width="160" height="100">
                         </a>
                     </div>
 
@@ -34,10 +34,10 @@
                     <div class="collapse navbar-collapse text-end" id="navMenu">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link" href="/">Inicio</a>
+                                <a class="nav-link" href="index.html">Inicio</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="catalogo.html">Cátalogo</a>
+                                <a class="nav-link" href="catalogo.html">Catálogo</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="nosotros.html">Nosotros</a>
@@ -51,13 +51,18 @@
                             <li class="nav-item">
                                 <a class="nav-link" id="cont-carrito" href="carrito.html">Carrito (0)</a>
                             </li>
-                            <li class="nav-item pag-actual">
-                                <a class="nav-link" href="login.html">Iniciar sesión</a>
+                            <li class="nav-item">
+                                <span class="nav-link pag-actual">Cuenta</span>
                             </li>
                         </ul>
                     </div>
                 </div>
             </nav>
+
+            <section class="hero-content">
+                <h1>Mi cuenta</h1>
+                <p class="tagline">Inicia sesión o crea tu cuenta en Vestuario Jacinta en pocos pasos.</p>
+            </section>
         </header>
 
         <main>
@@ -102,7 +107,7 @@
                     
                     <div>
                         <label for="reg-apll">Apellidos</label>
-                        <input type="text" id="reg-apll" name="apellido" placeholder="Ej: Peréz Soto" maxlength="100" required>
+                        <input type="text" id="reg-apll" name="apellido" placeholder="Ej: Pérez Soto" maxlength="100" required>
                         <span class="error-msg" id="error-reg-apll"></span>
                     </div>
                     
