@@ -48,7 +48,6 @@
     border-top: 6px solid #d98a7d;
 }
 
-/* Base de los botones*/
 #formContacto #btnLimpiar, 
 #formContacto button[type="submit"] {
     width: 100%;
