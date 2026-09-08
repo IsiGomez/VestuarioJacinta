@@ -63,7 +63,7 @@ function renderizarProductos() {
                     <img src="${prod.imagen}" alt="${prod.nombre}">
                     <h3>${prod.nombre}</h3>
                 </a>
-                <p>$${prod.precio}</p>
+                <p>$${prod.precio.toLocaleString('es-CL')}</p>
                 <button class="btn w-100 btn-principal" onclick="agregarProducto('${prod.nombre}', ${prod.precio}, '${prod.imagen}', 1)">Añadir</button>
             </div>
         `;
@@ -143,7 +143,8 @@ function guardarProductoSeleccionado(nombre, precio, imagen) {
 let etiquetaNombre = document.getElementById("detalle-nombre");
 if (etiquetaNombre) {
     document.getElementById("detalle-nombre").innerText = localStorage.getItem("nombreElegido");
-    document.getElementById("detalle-precio").innerText = "$" + localStorage.getItem("precioElegido");
+    let precioNumero = Number(localStorage.getItem("precioElegido"));
+    document.getElementById("detalle-precio").innerText = "$" + precioNumero.toLocaleString('es-CL');
     document.getElementById("detalle-img").src = localStorage.getItem("imagenElegida");
 }
 
@@ -193,8 +194,8 @@ function pintarCarrito() {
                 </div>
                 <div class="col-12 col-sm-5 text-center text-sm-start mb-2 mb-sm-0">
                     <h5 class="mb-1">${item.nombre}</h5>
-                    <p class="text-muted mb-0 small">Precio unitario: $${item.precio}</p>
-                    <p class="mb-0"><strong>Cantidad: ${item.cantidad}</strong> <span class="font-monospace subtotal">(Subtotal: $${subtotal})</span></p>
+                    <p class="text-muted mb-0 small">Precio unitario: $${item.precio.toLocaleString('es-CL')}</p>
+                    <p class="mb-0"><strong>Cantidad: ${item.cantidad}</strong> <span class="font-monospace subtotal">(Subtotal: $${subtotal.toLocaleString('es-CL')})</span></p>
                 </div>
                 <div class="col-12 col-sm-5 d-flex justify-content-center justify-content-sm-end align-items-center gap-2">
                     <input type="number" id="quitar-${i}" class="form-control text-center" min="1" max="${item.cantidad}" value="1" style="width: 70px;">
@@ -208,7 +209,7 @@ function pintarCarrito() {
     }
 
     let total = document.getElementById("precio-total");
-    if (total) total.innerText = "Total: $" + sumaTotal;
+    if (total) total.innerText = "Total: $" + sumaTotal.toLocaleString('es-CL');
 }
 
 function eliminarCantidad(posicion) {
