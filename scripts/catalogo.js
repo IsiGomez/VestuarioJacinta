@@ -120,10 +120,58 @@ function renderizarProductos() {
                     <h3>${prod.nombre}</h3>
                 </a>
                 <p>$${prod.precio.toLocaleString('es-CL')}</p>
-                <button class="btn w-100 btn-principal" onclick="agregarProducto('${prod.nombre}', ${prod.precio}, '${prod.imagen}', 1)">Añadir</button>
+                <button class="btn w-100 btn-principal" onclick="abrirModalVariantes(${prod.id})">Añadir</button>
             </div>
         `;
     });
+}
+
+let idProductoModal = null;
+
+function abrirModalVariantes(id) {
+    let producto = listaProductos.find(p => p.id === id);
+    if (!producto) return;
+
+    idProductoModal = id;
+
+    document.getElementById("modal-nombre-producto").innerText = producto.nombre;
+
+    let selectTallaModal = document.getElementById("modal-talla");
+    let selectColorModal = document.getElementById("modal-color");
+
+    selectTallaModal.innerHTML = "";
+    Object.keys(producto.variantes).forEach(t => {
+        selectTallaModal.innerHTML += `<option value="${t}">${t}</option>`;
+    });
+
+    function actualizarColoresModal() {
+        let tallaElegida = selectTallaModal.value;
+        let coloresDisponibles = producto.variantes[tallaElegida] || [];
+
+        selectColorModal.innerHTML = "";
+        coloresDisponibles.forEach(c => {
+            selectColorModal.innerHTML += `<option value="${c}">${c}</option>`;
+        });
+    }
+
+    selectTallaModal.onchange = actualizarColoresModal;
+    actualizarColoresModal();
+
+    let modal = new bootstrap.Modal(document.getElementById("modalVariantes"));
+    modal.show();
+}
+
+function confirmarAgregarDesdeModal() {
+    let producto = listaProductos.find(p => p.id === idProductoModal);
+    if (!producto) return;
+
+    let tallaElegida = document.getElementById("modal-talla").value;
+    let colorElegido = document.getElementById("modal-color").value;
+
+    agregarProducto(producto.nombre, producto.precio, producto.imagen, 1, tallaElegida, colorElegido);
+
+    let modal = bootstrap.Modal.getInstance(document.getElementById("modalVariantes"));
+    modal.hide();
 }
 
 function obtenerCarrito() {
@@ -165,12 +213,12 @@ function actualizarContadorNavbar() {
     }
 }
 
-function agregarProducto(nombre, precio, imagen, cantidad) {
+function agregarProducto(nombre, precio, imagen, cantidad, talla, color) {
     let carrito = obtenerCarrito();
     let encontrado = false;
 
     for (let i = 0; i < carrito.length; i++) {
-        if (carrito[i].nombre === nombre) {
+        if (carrito[i].nombre === nombre && carrito[i].talla === talla && carrito[i].color === color) {
             carrito[i].cantidad = carrito[i].cantidad + cantidad;
             encontrado = true;
             break;
@@ -182,7 +230,9 @@ function agregarProducto(nombre, precio, imagen, cantidad) {
             nombre: nombre,
             precio: precio,
             imagen: imagen,
-            cantidad: cantidad
+            cantidad: cantidad,
+            talla: talla,
+            color: color
         });
     }
 
@@ -246,8 +296,10 @@ function sumarDesdeDetalle() {
     let nombre = localStorage.getItem("nombreElegido");
     let precio = parseInt(localStorage.getItem("precioElegido"));
     let imagen = localStorage.getItem("imagenElegida");
+    let talla = document.getElementById("talla").value;
+    let color = document.getElementById("color").value;
 
-    agregarProducto(nombre, precio, imagen, cantidadElegida);
+    agregarProducto(nombre, precio, imagen, cantidadElegida, talla, color);
 }
 
 let contenedorCarrito = document.getElementById("lista-carrito");
@@ -279,8 +331,8 @@ function pintarCarrito() {
                 </div>
                 <div class="col-12 col-sm-5 text-center text-sm-start mb-2 mb-sm-0">
                     <h5 class="mb-1">${item.nombre}</h5>
-                    <p class="text-muted mb-0 small">Precio unitario: $${item.precio.toLocaleString('es-CL')}</p>
-                    <p class="mb-0"><strong>Cantidad: ${item.cantidad}</strong> <span class="font-monospace subtotal">(Subtotal: $${subtotal.toLocaleString('es-CL')})</span></p>
+                    <p class="text-muted mb-0 small">Talla: ${item.talla || "-"} | Color: ${item.color || "-"}</p>
+                    <p class="text-muted mb-0 small">Precio unitario: $${item.precio.toLocaleString('es-CL')}</p>                    <p class="mb-0"><strong>Cantidad: ${item.cantidad}</strong> <span class="font-monospace subtotal">(Subtotal: $${subtotal.toLocaleString('es-CL')})</span></p>
                 </div>
                 <div class="col-12 col-sm-5 d-flex justify-content-center justify-content-sm-end align-items-center gap-2">
                     <input type="number" id="quitar-${i}" class="form-control text-center" min="1" max="${item.cantidad}" value="1" style="width: 70px;">

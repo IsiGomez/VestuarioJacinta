@@ -119,6 +119,33 @@
                 <p class="text-center mb-0">&copy; <span id="anioActual"></span> Vestuario Jacinta. Todos los derechos reservados.</p>
             </div>
         </footer>
+
+        <div class="modal fade" id="modalVariantes" tabindex="-1" aria-labelledby="modalVariantesLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalVariantesLabel">Elige talla y color</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modal-nombre-producto" class="fw-bold"></p>
+
+                        <div class="mb-3 d-flex align-items-center gap-3">
+                            <label for="modal-talla" class="form-label mb-0">Talla:</label>
+                            <select id="modal-talla" class="form-select"></select>
+                        </div>
+
+                        <div class="mb-3 d-flex align-items-center gap-3">
+                            <label for="modal-color" class="form-label mb-0">Color:</label>
+                            <select id="modal-color" class="form-select"></select>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-principal" onclick="confirmarAgregarDesdeModal()">Añadir al carrito</button>
+                </div>
+            </div>
+        </div>
     
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
         <script src="scripts/annio.js"></script>
