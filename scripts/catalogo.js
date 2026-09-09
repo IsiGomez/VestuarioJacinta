@@ -72,7 +72,7 @@ function renderizarProductos() {
                     <h3>${prod.nombre}</h3>
                 </a>
                 <p>$${prod.precio.toLocaleString('es-CL')}</p>
-                <button class="btn w-100 btn-principal" onclick="agregarProducto('${prod.nombre}', ${prod.precio}, '${prod.imagen}', '${prod.descripcion}', 1)">Añadir</button>
+                <button class="btn w-100 btn-principal" onclick="agregarProducto('${prod.nombre}', ${prod.precio}, '${prod.imagen}', 1)">Añadir</button>
             </div>
         `;
     });
