@@ -4,49 +4,57 @@ const listaProductos = [
         id: 1,
         nombre: "Polera azul marino",
         precio: 8990,
-        imagen: "assets/productos/1.webp"
+        imagen: "assets/productos/1.webp",
+        descripcion: "Confeccionada en algodón suave y respirable. Su tono azul marino clásico la convierte en una prenda versátil e imprescindible para el uso diario."
     },
     {
         id: 2,
         nombre: "Polera negra",
         precio: 8990,
-        imagen: "assets/productos/2.webp"
+        imagen: "assets/productos/2.webp",
+        descripcion: "Un básico esencial de corte cómodo y color negro intenso, ideal para combinar fácilmente con cualquier prenda."
     },
     {
         id: 3,
         nombre: "Polera verde",
         precio: 8990,
-        imagen: "assets/productos/3.webp"
+        imagen: "assets/productos/3.webp",
+        descripcion: "Polera ligera de color verde fresco, pensada para aportar un toque renovado y relajado al outfit."
     },
     {
         id: 4,
         nombre: "Polera azul",
         precio: 8990,
-        imagen: "assets/productos/4.webp"
+        imagen: "assets/productos/4.webp",
+        descripcion: "Diseño de calce confortable en un azul vibrante, perfecto para mantenerse cómodo gracias a su tela liviana."
     },
     {
         id: 5,
         nombre: "Pantalón negro",
         precio: 19990,
-        imagen: "assets/productos/5.webp"
+        imagen: "assets/productos/5.webp",
+        descripcion: "Pantalón versátil y sobrio de color negro, diseñado con un ajuste cómodo que se adapta tanto a estilos casuales como semiformales."
     },
     {
         id: 6,
         nombre: "Pantalón blanco",
         precio: 19990,
-        imagen: "assets/productos/6.webp"
+        imagen: "assets/productos/6.webp",
+        descripcion: "Prenda de corte moderno en tono blanco luminoso, ideal para destacar en looks frescos y combinaciones veraniegas."
     },
     {
         id: 7,
         nombre: "Pantalón jeans azules",
         precio: 19990,
-        imagen: "assets/productos/7.webp"
+        imagen: "assets/productos/7.webp",
+        descripcion: "Jeans de mezclilla azul tradicional, fabricados con material resistente y duradero para el uso diario."
     },
     {
         id: 8,
         nombre: "Pantalón marrón",
         precio: 19990,
-        imagen: "assets/productos/8.webp"
+        imagen: "assets/productos/8.webp",
+        descripcion: "Pantalón en tono marrón cálido, excelente alternativa terrosa para salir del denim tradicional con estilo."
     }
 ];
 
@@ -59,12 +67,12 @@ function renderizarProductos() {
     listaProductos.forEach(prod => {
         contenedor.innerHTML += `
             <div class="producto">
-                <a href="detalle.html" onclick="guardarProductoSeleccionado('${prod.nombre}', ${prod.precio}, '${prod.imagen}')">
+                <a href="detalle.html" onclick="guardarProductoSeleccionado('${prod.nombre}', ${prod.precio}, '${prod.imagen}', '${prod.descripcion}')">
                     <img src="${prod.imagen}" alt="${prod.nombre}">
                     <h3>${prod.nombre}</h3>
                 </a>
                 <p>$${prod.precio.toLocaleString('es-CL')}</p>
-                <button class="btn w-100 btn-principal" onclick="agregarProducto('${prod.nombre}', ${prod.precio}, '${prod.imagen}', 1)">Añadir</button>
+                <button class="btn w-100 btn-principal" onclick="agregarProducto('${prod.nombre}', ${prod.precio}, '${prod.imagen}', '${prod.descripcion}', 1)">Añadir</button>
             </div>
         `;
     });
@@ -134,18 +142,21 @@ function agregarProducto(nombre, precio, imagen, cantidad) {
     alert(nombre + " añadido al carrito");
 }
 
-function guardarProductoSeleccionado(nombre, precio, imagen) {
+function guardarProductoSeleccionado(nombre, precio, imagen, descripcion) {
     localStorage.setItem("nombreElegido", nombre);
     localStorage.setItem("precioElegido", precio);
     localStorage.setItem("imagenElegida", imagen);
+    localStorage.setItem("descripcionElegida", descripcion);
 }
 
 let etiquetaNombre = document.getElementById("detalle-nombre");
+let etiquetaDescripcion = document.getElementById("detalle-descripcion");
 if (etiquetaNombre) {
     document.getElementById("detalle-nombre").innerText = localStorage.getItem("nombreElegido");
     let precioNumero = Number(localStorage.getItem("precioElegido"));
     document.getElementById("detalle-precio").innerText = "$" + precioNumero.toLocaleString('es-CL');
     document.getElementById("detalle-img").src = localStorage.getItem("imagenElegida");
+    etiquetaDescripcion.innerText = localStorage.getItem("descripcionElegida") || "Descripción no disponible.";
 }
 
 function sumarDesdeDetalle() {

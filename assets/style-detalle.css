@@ -4,3 +4,9 @@
 #detalle-precio {
   color: #2e2b5f;
 }
+
+.box-det {
+  background-color: #d1ddc6;
+  padding: 20px;
+  border-radius: 10px;
+}
