@@ -5,56 +5,104 @@ const listaProductos = [
         nombre: "Polera azul marino",
         precio: 8990,
         imagen: "assets/productos/1.webp",
-        descripcion: "Confeccionada en algodón suave y respirable. Su tono azul marino clásico la convierte en una prenda versátil e imprescindible para el uso diario."
+        descripcion: "Confeccionada en algodón suave y respirable. Su tono azul marino clásico la convierte en una prenda versátil e imprescindible para el uso diario.",
+        variantes: {
+            "S": ["Azul marino"],
+            "M": ["Azul marino", "Gris"],
+            "L": ["Azul marino", "Gris"],
+            "XL": ["Gris"]
+        }
     },
     {
         id: 2,
         nombre: "Polera negra",
         precio: 8990,
         imagen: "assets/productos/2.webp",
-        descripcion: "Un básico esencial de corte cómodo y color negro intenso, ideal para combinar fácilmente con cualquier prenda."
+        descripcion: "Un básico esencial de corte cómodo y color negro intenso, ideal para combinar fácilmente con cualquier prenda.",
+        variantes: {
+            "S": ["Azul marino"],
+            "M": ["Azul marino", "Gris"],
+            "L": ["Azul marino", "Gris"],
+            "XL": ["Gris"]
+        }
     },
     {
         id: 3,
         nombre: "Polera verde",
         precio: 8990,
         imagen: "assets/productos/3.webp",
-        descripcion: "Polera ligera de color verde fresco, pensada para aportar un toque renovado y relajado al outfit."
+        descripcion: "Polera ligera de color verde fresco, pensada para aportar un toque renovado y relajado al outfit.",
+        variantes: {
+            "S": ["Azul marino"],
+            "M": ["Azul marino", "Gris"],
+            "L": ["Azul marino", "Gris"],
+            "XL": ["Gris"]
+        }
     },
     {
         id: 4,
         nombre: "Polera azul",
         precio: 8990,
         imagen: "assets/productos/4.webp",
-        descripcion: "Diseño de calce confortable en un azul vibrante, perfecto para mantenerse cómodo gracias a su tela liviana."
+        descripcion: "Diseño de calce confortable en un azul vibrante, perfecto para mantenerse cómodo gracias a su tela liviana.",
+        variantes: {
+            "S": ["Azul marino"],
+            "M": ["Azul marino", "Gris"],
+            "L": ["Azul marino", "Gris"],
+            "XL": ["Gris"]
+        }
     },
     {
         id: 5,
         nombre: "Pantalón negro",
         precio: 19990,
         imagen: "assets/productos/5.webp",
-        descripcion: "Pantalón versátil y sobrio de color negro, diseñado con un ajuste cómodo que se adapta tanto a estilos casuales como semiformales."
+        descripcion: "Pantalón versátil y sobrio de color negro, diseñado con un ajuste cómodo que se adapta tanto a estilos casuales como semiformales.",
+        variantes: {
+            "S": ["Azul marino"],
+            "M": ["Azul marino", "Gris"],
+            "L": ["Azul marino", "Gris"],
+            "XL": ["Gris"]
+        }
     },
     {
         id: 6,
         nombre: "Pantalón blanco",
         precio: 19990,
         imagen: "assets/productos/6.webp",
-        descripcion: "Prenda de corte moderno en tono blanco luminoso, ideal para destacar en looks frescos y combinaciones veraniegas."
+        descripcion: "Prenda de corte moderno en tono blanco luminoso, ideal para destacar en looks frescos y combinaciones veraniegas.",
+        variantes: {
+            "S": ["Azul marino"],
+            "M": ["Azul marino", "Gris"],
+            "L": ["Azul marino", "Gris"],
+            "XL": ["Gris"]
+        }
     },
     {
         id: 7,
         nombre: "Pantalón jeans azules",
         precio: 19990,
         imagen: "assets/productos/7.webp",
-        descripcion: "Jeans de mezclilla azul tradicional, fabricados con material resistente y duradero para el uso diario."
+        descripcion: "Jeans de mezclilla azul tradicional, fabricados con material resistente y duradero para el uso diario.",
+        variantes: {
+            "S": ["Azul marino"],
+            "M": ["Azul marino", "Gris"],
+            "L": ["Azul marino", "Gris"],
+            "XL": ["Gris"]
+        }
     },
     {
         id: 8,
         nombre: "Pantalón marrón",
         precio: 19990,
         imagen: "assets/productos/8.webp",
-        descripcion: "Pantalón en tono marrón cálido, excelente alternativa terrosa para salir del denim tradicional con estilo."
+        descripcion: "Pantalón en tono marrón cálido, excelente alternativa terrosa para salir del denim tradicional con estilo.",
+        variantes: {
+            "S": ["Azul marino"],
+            "M": ["Azul marino", "Gris"],
+            "L": ["Azul marino", "Gris"],
+            "XL": ["Gris"]
+        }
     }
 ];
 
@@ -67,7 +115,7 @@ function renderizarProductos() {
     listaProductos.forEach(prod => {
         contenedor.innerHTML += `
             <div class="producto">
-                <a href="detalle.html" onclick="guardarProductoSeleccionado('${prod.nombre}', ${prod.precio}, '${prod.imagen}', '${prod.descripcion}')">
+                <a href="detalle.html" onclick="guardarProductoSeleccionado(${prod.id})">
                     <img src="${prod.imagen}" alt="${prod.nombre}">
                     <h3>${prod.nombre}</h3>
                 </a>
@@ -142,11 +190,15 @@ function agregarProducto(nombre, precio, imagen, cantidad) {
     alert(nombre + " añadido al carrito");
 }
 
-function guardarProductoSeleccionado(nombre, precio, imagen, descripcion) {
-    localStorage.setItem("nombreElegido", nombre);
-    localStorage.setItem("precioElegido", precio);
-    localStorage.setItem("imagenElegida", imagen);
-    localStorage.setItem("descripcionElegida", descripcion);
+function guardarProductoSeleccionado(id) {
+    let producto = listaProductos.find(p => p.id === id);
+    if (!producto) return;
+
+    localStorage.setItem("nombreElegido", producto.nombre);
+    localStorage.setItem("precioElegido", producto.precio);
+    localStorage.setItem("imagenElegida", producto.imagen);
+    localStorage.setItem("descripcionElegida", producto.descripcion);
+    localStorage.setItem("variantesElegidas", JSON.stringify(producto.variantes));
 }
 
 let etiquetaNombre = document.getElementById("detalle-nombre");
@@ -157,6 +209,28 @@ if (etiquetaNombre) {
     document.getElementById("detalle-precio").innerText = "$" + precioNumero.toLocaleString('es-CL');
     document.getElementById("detalle-img").src = localStorage.getItem("imagenElegida");
     etiquetaDescripcion.innerText = localStorage.getItem("descripcionElegida") || "Descripción no disponible.";
+
+    let variantes = JSON.parse(localStorage.getItem("variantesElegidas") || "{}");
+    let selectTalla = document.getElementById("talla");
+    let selectColor = document.getElementById("color");
+
+    // Llenar tallas (las claves del objeto variantes)
+    Object.keys(variantes).forEach(t => {
+        selectTalla.innerHTML += `<option value="${t}">${t}</option>`;
+    });
+
+    function actualizarColores() {
+        let tallaElegida = selectTalla.value;
+        let coloresDisponibles = variantes[tallaElegida] || [];
+
+        selectColor.innerHTML = "";
+        coloresDisponibles.forEach(c => {
+            selectColor.innerHTML += `<option value="${c}">${c}</option>`;
+        });
+    }
+
+    selectTalla.addEventListener("change", actualizarColores);
+    actualizarColores(); // pintar los colores de la primera talla
 }
 
 function sumarDesdeDetalle() {
